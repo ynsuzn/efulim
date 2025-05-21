@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Efulim</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #c71585, #ff69b4);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 30px;
+      color: #fff;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .heart {
+      font-size: 4em;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .note {
+      margin-top: 40px;
+      font-size: 1.4em;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      border-radius: 20px;
+    }
+    .gallery {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .photo-block {
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 15px;
+      width: 280px;
+    }
+    .photo-block img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .photo-block p {
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    button {
+      background-color: white;
+      color: #c71585;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      margin: 20px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    audio {
+      display: none;
+    }
+    .special-note {
+      display: none;
+      margin-top: 40px;
+      font-size: 1.4em;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">❤️</div>
+  <h1>Efulim</h1>
+  <p>Bu site senin için. Hep mutlu ol olur mu? Seni seviyorum...</p>
+
+  <div class="note">
+    <p>Seni tanıdığım o ilk andan değil belki ama, o hazırlık döneminin son zamanlarından itibaren kalbim sana her geçen gün daha çok doldu, her geçen gün daha fazla aşık oldum. Bazen farkında olmadan seni üzdüm, kırdım, istemeden de olsa yordum, bazen senin demene rağmen de yaptım bunları. Ve biliyorum... sana her zaman iyi gelemedim (çoğunlukla).</p>
+    <p>Ama bilmeni isterim ki ben sana deliler gibi aşığım, seni çok çok seviyorum. Seninle vakit geçirmek, küçük anılar biriktirmek, bir gün içinde seni bin kez güldürebilmek, seninle aynı nefesi paylaşmak benim için her şeyden kıymetli, sen direkt en kıymetlimsin.</p>
+    <p>Hatta sadece bugünü değil, bir ömrü seninle geçirmek istiyorum. Sana her şeyinle layık olmak istiyorum. Ve burada, bu satırların içinde bir kez daha söz veriyorum:</p>
+    <p>Seni mutlu etmek için elimden gelen her şeyi yapacağım. Seni seveceğim, koruyacağım, üzdüğümde kendime kızacağım, kendimi cezalandıracağım.</p>
+    <p>Yüzsüzce, arsızca... belki bir tık mahcup ama tamamen içtenlikle söylüyorum:</p>
+    <p><strong>Ben seni çok seviyorum. Ve hep seveceğim. Özür dilerim...</strong></p>
+  </div>
+
+  <button onclick="playMusic()">❤️ Play</button>
+  <button onclick="toggleNote()">📜 Özel Not</button>
+
+  <audio id="myAudio" controls>
+    <source src="tiryakinim.mp3" type="audio/mpeg">
+    Tarayıcınız ses öğesini desteklemiyor.
+  </audio>
+
+  <div class="gallery">
+
+    <div class="photo-block">
+        <img src="images/1.jpg" alt="photo1">
+        <p>Şu günkü mutluluğun...</p>
+    </div>
+    
+    <div class="photo-block">
+        <img src="images/2.jpg" alt="photo2">
+        <p>Aşkımızın zirvede olduğu zamanlar...</p>
+    </div>
+    
+    <div class="photo-block">
+        <img src="images/3.jpg" alt="photo3">
+        <p>Müze gezelim be lütfen.</p>
+    </div>
+    
+    <div class="photo-block">
+        <img src="images/4.jpg" alt="photo4">
+        <p>Ahhh ahhh 31.08.2023</p>
+    </div>
+    
+    <div class="photo-block">
+        <img src="images/5.jpg" alt="photo5">
+        <p>Saçlarının kokusuna bayılıyorum bilgin olsun</p>
+    </div>
+    
+</div>
+
+  <div class="special-note" id="specialNote">
+    <p>Sevgilim benim elimi sıkı sıkı tutar mısın... beni bırakma... ben seni mutlu edeceğim... sevgim, aşkım yetmiyor bunun için farkındayım...</p>
+    <p><strong>Bütün benliğimle seni mutlu edeceğim. Lütfen benden uzaklaşma...</strong></p>
+  </div>
+
+  <script>
+    function playMusic() {
+      var audio = document.getElementById("myAudio");
+      audio.play();
+    }
+    function toggleNote() {
+      var note = document.getElementById("specialNote");
+      if (note.style.display === "none") {
+        note.style.display = "block";
+      } else {
+        note.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
